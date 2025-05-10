@@ -1,9 +1,41 @@
 [
   {
-    "id": "1000",
-    "title": "Event 1",
-    "date": "12-03-2024",
-    "description": "This is event 1.",
+    "id": "1",
+    "title": "React Workshop",
+    "description": "Learn React basics in this hands-on session.",
+    "date": "2025-05-15",
+    "time": "15:00",
+    "rsvpList": [
+      "1"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Node.js Bootcamp",
+    "description": "Build a backend with Node and Express.",
+    "date": "2025-05-20",
+    "time": "10:00",
     "rsvpList": []
+  },
+  {
+    "id": "3",
+    "title": "Tailwind UI Tricks",
+    "description": "Make beautiful UIs using Tailwind CSS.",
+    "date": "2025-06-01",
+    "time": "14:00",
+    "rsvpList": [
+      "2",
+      "1"
+    ]
+  },
+  {
+    "id": "4",
+    "title": "React Workshop",
+    "description": "Learn React basics in this hands-on session.",
+    "date": "2025-05-11",
+    "time": "09:00",
+    "rsvpList": [
+      "2"
+    ]
   }
 ]

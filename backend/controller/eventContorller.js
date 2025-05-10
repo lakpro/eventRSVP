@@ -9,13 +9,15 @@ exports.getAllEvents = (req, res) => {
   try {
     const data = fs.readFileSync(filePath, "utf8");
     const events = JSON.parse(data);
-    res.json(events);
+    res.status(200).json({ message: "Events loaded successfully", events });
   } catch (error) {
-    res.status(500).json({ message: "Failed to load events" });
+    console.log("Error ", error);
+    res.status(500).json({ message: "Failed to load events", error });
   }
 };
 
 exports.rsvpEvent = (req, res) => {
+  console.log("RSVPing");
   const { userId } = req.body;
   const eventId = req.params.id;
 
@@ -29,15 +31,17 @@ exports.rsvpEvent = (req, res) => {
     if (!event.rsvpList.includes(userId)) {
       event.rsvpList.push(userId);
       fs.writeFileSync(filePath, JSON.stringify(events, null, 2));
+      res.status(200).json({ message: "User RSVPed", event });
+    } else {
+      res.status(200).json({ message: "User already RSVPed", event });
     }
-
-    res.json({ message: "User RSVPed", event });
   } catch (error) {
     res.status(500).json({ message: "RSVP failed" });
   }
 };
 
 exports.unrsvpEvent = (req, res) => {
+  console.log("Un-RSVPing");
   const { userId } = req.body;
   const eventId = req.params.id;
 
@@ -52,9 +56,10 @@ exports.unrsvpEvent = (req, res) => {
     if (index !== -1) {
       event.rsvpList.splice(index, 1);
       fs.writeFileSync(filePath, JSON.stringify(events, null, 2));
+      res.status(200).json({ message: "User un-RSVPed", event });
+    } else {
+      res.status(200).json({ message: "User already un-RSVPed", event });
     }
-
-    res.json({ message: "User un-RSVPed", event });
   } catch (error) {
     res.status(500).json({ message: "Un-RSVP failed" });
   }

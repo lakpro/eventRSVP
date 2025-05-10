@@ -1,8 +1,13 @@
 import { useState } from "react";
 import "./App.css";
+import Events from "./components/events";
 
 function App() {
-  return <>Hello World</>;
+  return (
+    <>
+      <Events />
+    </>
+  );
 }
 
 export default App;
