@@ -1,14 +1,15 @@
 const express = require("express");
 const app = express();
 const PORT = 5000;
+const eventRoutes = require("./routes/eventRoutes");
+// const cors = require("cors");
 
 // Middleware to parse JSON
 app.use(express.json());
+// app.use(cors());
 
-// Test route
-app.get("/", (req, res) => {
-  res.send("Server is running successfully!");
-});
+// Routes
+app.use("/api/events", eventRoutes);
 
 // Start server
 app.listen(PORT, () => {
