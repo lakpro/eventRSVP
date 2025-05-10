@@ -5,7 +5,9 @@
     "description": "Learn React basics in this hands-on session.",
     "date": "2025-05-15",
     "time": "15:00",
-    "rsvpList": []
+    "rsvpList": [
+      "2"
+    ]
   },
   {
     "id": "2",
@@ -14,8 +16,7 @@
     "date": "2025-05-20",
     "time": "10:00",
     "rsvpList": [
-      "1",
-      "2"
+      "1"
     ]
   },
   {
@@ -33,8 +34,7 @@
     "date": "2025-05-11",
     "time": "09:00",
     "rsvpList": [
-      "1",
-      "2"
+      "1"
     ]
   }
 ]
