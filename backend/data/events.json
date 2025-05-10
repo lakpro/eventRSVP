@@ -5,9 +5,7 @@
     "description": "Learn React basics in this hands-on session.",
     "date": "2025-05-15",
     "time": "15:00",
-    "rsvpList": [
-      "1"
-    ]
+    "rsvpList": []
   },
   {
     "id": "2",
@@ -15,7 +13,10 @@
     "description": "Build a backend with Node and Express.",
     "date": "2025-05-20",
     "time": "10:00",
-    "rsvpList": []
+    "rsvpList": [
+      "1",
+      "2"
+    ]
   },
   {
     "id": "3",
@@ -23,10 +24,7 @@
     "description": "Make beautiful UIs using Tailwind CSS.",
     "date": "2025-06-01",
     "time": "14:00",
-    "rsvpList": [
-      "2",
-      "1"
-    ]
+    "rsvpList": []
   },
   {
     "id": "4",
@@ -35,6 +33,7 @@
     "date": "2025-05-11",
     "time": "09:00",
     "rsvpList": [
+      "1",
       "2"
     ]
   }

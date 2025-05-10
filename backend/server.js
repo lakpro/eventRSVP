@@ -6,7 +6,12 @@ const cors = require("cors");
 
 // Middleware to parse JSON
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    methods: ["GET", "POST"],
+  })
+);
 
 // Routes
 app.use("/api/events", eventRoutes);

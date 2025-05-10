@@ -43,11 +43,20 @@ const EventsPage = () => {
   };
 
   const handleRSVP = async (eventId) => {
+    console.log("RSVP Called");
     try {
       await axios.post(`http://localhost:5000/api/events/${eventId}/rsvp`, {
         userId: userId,
       });
-      fetchEvents();
+      //   fetchEvents();
+      // Optimistically update the state
+      setEvents((prevEvents) =>
+        prevEvents.map((event) =>
+          event.id === eventId
+            ? { ...event, rsvpList: [...event.rsvpList, userId] }
+            : event
+        )
+      );
     } catch (err) {
       console.error("RSVP failed", err);
       alert("Failed to RSVP. Please try again."); // Show an alert if RSVP fails
@@ -55,11 +64,23 @@ const EventsPage = () => {
   };
 
   const handleUnRSVP = async (eventId) => {
+    console.log("UnRSVP called");
     try {
       await axios.post(`http://localhost:5000/api/events/${eventId}/unrsvp`, {
         userId: userId,
       });
-      fetchEvents();
+      //   fetchEvents();
+      // Optimistically update the state
+      setEvents((prevEvents) =>
+        prevEvents.map((event) =>
+          event.id === eventId
+            ? {
+                ...event,
+                rsvpList: event.rsvpList.filter((id) => id !== userId),
+              }
+            : event
+        )
+      );
     } catch (err) {
       console.error("Un-RSVP failed", err);
       alert("Failed to Un-RSVP. Please try again."); // Show an alert if Un-RSVP fails
