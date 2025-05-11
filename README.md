@@ -11,7 +11,7 @@ A full-stack demo app where users can view a list of events and RSVP or un-RSVP 
 - RSVP / Un-RSVP toggle button per event
 - Clean and modular UI design
 
-### 🖥️ Backend (Node.js + Express + MongoDB)
+### 🖥️ Backend (Node.js + Express)
 - APIs to fetch, RSVP, and un-RSVP events
 - Simple in-memory JSON store for demo purposes
 
@@ -33,7 +33,7 @@ Each **Event** has the following structure:
   "title": "string",
   "description": "string",
   "date": "Date",
-  "rsvpList": ["userId"] // List of users who RSVP'd
+  "rsvpList": ["userId"]
 }
 ```
 
@@ -97,6 +97,17 @@ npm run dev
 
 ---
 
+## 🛡️ Scalability & Security
+
+1. ✅ **Throttling Enabled:**  
+   The RSVP button is throttled on the frontend to prevent users from spamming requests repeatedly in a short period.
+
+2. 🛑 **Rate Limiting (To Be Added):**  
+   Rate limiting can be implemented on the backend using middleware (like `express-rate-limit`) to restrict the number of requests from a single IP within a given timeframe.
+
+3. 🔒 **Temporary IP Ban (Planned):**  
+   Users who consistently exceed the rate limit can be temporarily banned or blocked by IP using tools like `express-ip-filter`.
+
 ## 📁 Project Structure
 
 ```
@@ -115,6 +126,11 @@ eventRSVP/
 
 ---
 
+## 🖼️ Demo Preview
+
+![Event RSVP Demo](https://github.com/user-attachments/assets/05075ce6-a5f7-4023-be72-223200d04863)
+
+---
 
 ## 🧑‍💻 Author
 
